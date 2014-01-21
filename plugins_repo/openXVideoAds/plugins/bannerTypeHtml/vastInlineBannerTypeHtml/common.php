@@ -47,7 +47,7 @@ define('VAST_OVERLAY_DEFAULT_HEIGHT', 40);
 
 function getVastVideoTypes()
 {
-   static $videoEncodingTypes = array( 'video/mp4' =>  'MP4',
+   static $videoEncodingTypes = array( 'video/x-mp4' =>  'MP4',
                                        'video/x-flv' => 'FLV',
                                        'video/webm' => 'WEBM',
                                        // not supported by flowplayer -  'video/x-ms-wmv' => 'WMV',
@@ -81,7 +81,7 @@ function combineVideoUrl( &$aAdminFields )
             if ( $aAdminFields['vast_video_type'] == 'video/x-flv' ){
                 $aAdminFields['vast_video_outgoing_filename'] = $aAdminFields['vast_net_connection_url']  . VAST_RTMP_FLV_DELIMITER  . $aAdminFields['vast_video_filename'];
             }
-            elseif ( $aAdminFields['vast_video_type'] == 'video/x-mp4' || $aAdminFields['vast_video_type'] == 'video/mp4'){
+            elseif ( $aAdminFields['vast_video_type'] == 'video/x-mp4'){
                 $aAdminFields['vast_video_outgoing_filename'] = $aAdminFields['vast_net_connection_url'] . VAST_RTMP_MP4_DELIMITER  . $aAdminFields['vast_video_filename'];
             }
         }
